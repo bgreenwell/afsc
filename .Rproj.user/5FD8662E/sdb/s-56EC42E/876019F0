@@ -1,0 +1,18 @@
+{
+    "contents" : "#' Unique Patterns\n#'\n#' Extract unique patterns from a character vector.\n#'\n#' @param x A character vector.\n#' @param show_ws Logical indicating whether or not to display whitespace.\n#' @param show_ws_as Character used to indicate whitespace. Defaults to \"w\".\n#' @export\nunique_patterns <- function(x, show_ws = TRUE, show_ws_as = \"w\",\n                            as_table = FALSE) {\n  if (!is.character(x)) {\n    x <- as.character(x)\n  }\n  x <- gsub(\"[a-z]\", \"a\", x)\n  x <- gsub(\"[A-Z]\", \"A\", x)\n  x <- gsub(\"[0-9]\", \"9\", x)\n  if (show_ws) {\n    x <- gsub(\"\\\\s\", show_ws_as, x)\n  }\n  if(as_table) {\n    dtab <- as.data.frame(sort(table(x)))\n    names(dtab) <- \"frequency\"\n    dtab\n  } else {\n    unique(x)\n  }\n}\n",
+    "created" : 1449164417757.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3474636771",
+    "id" : "876019F0",
+    "lastKnownWriteTime" : 1449164433,
+    "path" : "~/Desktop/Dropbox/devel/afsc/R/afsc_patterns.R",
+    "project_path" : "R/afsc_patterns.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

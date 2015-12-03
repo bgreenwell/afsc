@@ -1,0 +1,17 @@
+{
+    "contents" : "#' Career Group\n#'\n#' Extract the career group indicated by the AFSC.\n#'\n#' @param x A character vector containing AFSCs.\n#' @param allow_X Logical indicating wether or not the \\code{\"X\"} placeholder is\n#'   allowed. Default is \\code{FALSE}.\n#' @export\nget_career_group <- function(x, allow_X = FALSE) {\n  types <- afsc_type(x, allow_X = allow_X)\n  # For valid AFSCsm the first digit shouls be the career group\n  ifelse(is.na(types), NA, regmatches(x, regexpr(\"\\\\d\", x)))\n}\n\n\n#' Shredout\n#'\n#' Shred different levels.\n#'\n#' @param x A character vector containing AFSCs.\n#' @param allow_X Logical indicating wether or not the \\code{\"X\"} placeholder is\n#'   allowed. Default is \\code{FALSE}.\n#' @export\n#' @details For example, \\code{level = 1} extracts the career group.\n#' @export\nshred_afsc <- function(x, level = 1L, allow_X = FALSE) {\n  types <- afsc_type(x, allow_X = allow_X)\n  ifelse(is.na(types), NA, substr(x, start = 1, stop = level))\n}\n",
+    "created" : 1449164461383.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1791694329",
+    "id" : "7702FB2C",
+    "lastKnownWriteTime" : 1449164609,
+    "path" : "~/Desktop/Dropbox/devel/afsc/R/afsc.R",
+    "project_path" : "R/afsc.R",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
