@@ -5,6 +5,8 @@
 #' @param x A character vector.
 #' @param show_ws Logical indicating whether or not to display whitespace.
 #' @param show_ws_as Character used to indicate whitespace. Defaults to "w".
+#' @param as_table Logical indicating whether or not to display results in a
+#'   frequency table. Default is \code{FALSE}.
 #' @export
 unique_patterns <- function(x, show_ws = TRUE, show_ws_as = "w",
                             as_table = FALSE) {

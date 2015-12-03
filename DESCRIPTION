@@ -1,10 +1,15 @@
 Package: afsc
 Type: Package
-Title: Functions for Working with Air Force Specialty Codes.
-Version: 0.1
+Title: Tools for Working with Air Force Specialty Codes (AFSCs).
+Version: 0.0.0.9000
 Date: 2015-11-28
-Author: Brandon M. Greenwell
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Authors@R: person("Brandon", "Greenwell", email = "greenwell.brandon@gmail.com",
+  role = c("aut", "cre"))
+Description: Find invalid AFSCs, perform basic pattern analysis to see why
+  certain AFSCs are not considered as valid, extract prefixes/suffixes or strip
+  roots, determine AFSC type (i.e., enlisted or officer), and much more.
+Depends:
+    base,
+License: GPL (>= 2)
+URL: https://github.com/bgreenwell/investr
 LazyData: TRUE

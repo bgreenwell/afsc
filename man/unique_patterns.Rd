@@ -12,6 +12,9 @@ unique_patterns(x, show_ws = TRUE, show_ws_as = "w", as_table = FALSE)
 \item{show_ws}{Logical indicating whether or not to display whitespace.}
 
 \item{show_ws_as}{Character used to indicate whitespace. Defaults to "w".}
+
+\item{as_table}{Logical indicating whether or not to display results in a
+frequency table. Default is \code{FALSE}.}
 }
 \description{
 Extract unique patterns from a character vector.

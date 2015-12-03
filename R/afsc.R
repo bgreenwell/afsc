@@ -18,10 +18,13 @@ get_career_group <- function(x, allow_X = FALSE) {
 #' Shred different levels.
 #'
 #' @param x A character vector containing AFSCs.
+#' @param level Integer specifying the depth the AFSCs should be shred to.
+#'   Default is \code{1L} meaning return the first character (which should be
+#'   career group for valid AFSCs without any prefix).
 #' @param allow_X Logical indicating wether or not the \code{"X"} placeholder is
 #'   allowed. Default is \code{FALSE}.
 #' @export
-#' @details For example, \code{level = 1} extracts the career group.
+#' @details For example, \code{level = 1L} extracts the career group.
 #' @export
 shred_afsc <- function(x, level = 1L, allow_X = FALSE) {
   types <- afsc_type(x, allow_X = allow_X)

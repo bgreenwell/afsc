@@ -1,5 +1,5 @@
 # afsc
-An R package for working with Air Force Specialty Codes (AFSCs)
+An R package providing tools for working with Air Force Specialty Codes (AFSCs)
 
 ## Installation
 

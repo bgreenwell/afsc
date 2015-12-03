@@ -9,6 +9,10 @@ shred_afsc(x, level = 1L, allow_X = FALSE)
 \arguments{
 \item{x}{A character vector containing AFSCs.}
 
+\item{level}{Integer specifying the depth the AFSCs should be shred to.
+Default is \code{1L} meaning return the first character (which should be
+career group for valid AFSCs without any prefix).}
+
 \item{allow_X}{Logical indicating wether or not the \code{"X"} placeholder is
 allowed. Default is \code{FALSE}.}
 }
@@ -16,6 +20,6 @@ allowed. Default is \code{FALSE}.}
 Shred different levels.
 }
 \details{
-For example, \code{level = 1} extracts the career group.
+For example, \code{level = 1L} extracts the career group.
 }
 
