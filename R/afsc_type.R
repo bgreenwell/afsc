@@ -11,12 +11,12 @@
 #' @rdname afsc_type
 #' @export
 #' @examples
-#' afscs <- c(enlisted = "9T000", officer = "92T0", bad = "A9T0X0K")
+#' afscs <- c("9T000", "92T0", "A9T0X0K")
 #' afsc_type(afscs)
 #' is_enlisted(afscs, allow_X = TRUE)
 #' is_officer(afscs)
 afsc_type <- function(x, allow_X = FALSE) {
-  ifelse(is_enlisted(x, allow_X = allow_X), "enlisted", 
+  ifelse(is_enlisted(x, allow_X = allow_X), "enlisted",
          ifelse(is_officer(x, allow_X = allow_X), "officer", NA))
 }
 

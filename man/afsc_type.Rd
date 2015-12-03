@@ -27,7 +27,7 @@ allowed. Default is \code{FALSE}.}
 Determine which AFSCs are officer and which are enlisted.
 }
 \examples{
-afscs <- c(enlisted = "9T000", officer = "92T0", bad = "A9T0X0K")
+afscs <- c("9T000", "92T0", "A9T0X0K")
 afsc_type(afscs)
 is_enlisted(afscs, allow_X = TRUE)
 is_officer(afscs)
