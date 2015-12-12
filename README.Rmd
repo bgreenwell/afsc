@@ -1,4 +1,8 @@
 # afsc
+
+[![Build Status](https://travis-ci.org/bgreenwell/afsc.svg?branch=master)](https://travis-ci.org/bgreenwell/afsc)
+[![Coverage Status](https://img.shields.io/codecov/c/github/bgreenwell/afsc.svg)](https://codecov.io/github/bgreenwell/afsc?branch=master)
+
 An R package providing tools for working with Air Force Specialty Codes (AFSCs)
 
 ## Installation
