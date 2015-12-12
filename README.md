@@ -17,7 +17,6 @@ Bug reports should be submitted to https://github.com/bgreenwell/afsc/issues.
   * `get_prefix` 
   * `get_suffix` 
   * `get_valid_afscs` 
-  * `is_alnum`
   * `is_enlisted`
   * `is_officer` 
   * `is_valid_afsc` 
