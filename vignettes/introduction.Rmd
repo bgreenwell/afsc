@@ -1,0 +1,56 @@
+---
+title: "Working with Air Force Specialty Codes (AFSCs) in R"
+author: "Brandon M. Greenwell"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Installation
+
+```{r, message=FALSE}
+# Install development version from GitHub (requires devtools package)
+devtools::install_github("bgreenwell/afsc")
+
+# Load package
+library(afsc)
+
+# List all the objects in the afsc package
+ls("package:afsc")
+```
+
+## Basic pattern analysis
+The first two are enlisted AFSCs, the latter contains a prefix and suffix (both of which are optional). The second two are officer AFSCS, the first of which contains a prefix. The last four are not valid AFSCs; the last one is an AFSC, but has been entered incorrecltly (it has aan extra whitespace and the letter is lowercase).
+```{r}
+afscs <- c("X1N371E", "9T000", "T63A3", "63A3", "ABCDE", NA, "", " 63a3")
+unique_patterns(afscs, as_table = TRUE)
+```
+
+Only four of the patterns match those of an enlisted or officer AFSC. 
+
+## Checking AFSCs for correctness
+
+```{r}
+is_valid_afsc(afscs)
+```
+
+```{r}
+get_valid_afscs(afscs)
+get_invalid_afscs(afscs)
+```
+
+```{r}
+is_enlisted(afscs)  # logical vector
+is_officer(afscs)  # logical vector
+afsc_type(afscs)  # character vector
+```
+
+## Extracting different AFSC components
+
+```{r}
+get_prefix(afscs)
+get_suffix(afscs)
+```

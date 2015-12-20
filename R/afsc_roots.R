@@ -10,13 +10,14 @@
 #' @rdname afsc_roots
 #' @export
 #' @examples
-#' afscs <- c("9T000", "X1N371E")
+#' afscs <- c("9T000", "X1N371E", "123ABC")
 #' strip_roots(afscs)
 #' get_prefix(afscs)
 #' get_suffix(afscs)
 strip_roots <- function(x) {
 
   # Logical vectors indicating which elements contain a prefix/suffix (if any)
+  invalid <- !is_valid_afsc(x)
   prefixes <- grepl("^[a-zA-Z]", x)
   suffixes <- grepl("[a-zA-Z]$", x)
 
@@ -31,6 +32,7 @@ strip_roots <- function(x) {
   }
 
   # Return value
+  x[invalid] <- NA  # FIXME: Should strip_roots return NA or original element?
   x
 
 }
@@ -39,9 +41,11 @@ strip_roots <- function(x) {
 #' @rdname afsc_roots
 #' @export
 get_prefix <- function(x) {
+  invalid <- !is_valid_afsc(x)
   prefixes <- grepl("^[a-zA-Z]", x)
   x[prefixes] <- substr(x[prefixes], start = 1, stop = 1)
   x[!prefixes] <- "none"
+  x[invalid] <- NA
   x
 }
 
@@ -49,9 +53,11 @@ get_prefix <- function(x) {
 #' @rdname afsc_roots
 #' @export
 get_suffix <- function(x) {
+  invalid <- !is_valid_afsc(x)
   suffixes <- grepl("[a-zA-Z]$", x)
   x[suffixes] <- substr(x[suffixes], start = nchar(x[suffixes]),
                         stop = nchar(x[suffixes]))
   x[!suffixes] <- "none"
+  x[invalid] <- NA
   x
 }

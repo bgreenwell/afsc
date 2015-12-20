@@ -25,7 +25,7 @@ get_suffix(x)
 Extract or strip off AFSC prefixes and suffixes (if any).
 }
 \examples{
-afscs <- c("9T000", "X1N371E")
+afscs <- c("9T000", "X1N371E", "123ABC")
 strip_roots(afscs)
 get_prefix(afscs)
 get_suffix(afscs)
