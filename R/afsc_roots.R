@@ -62,3 +62,23 @@ get_suffix <- function(x, allow_X = allow_X) {
   x[invalid] <- NA
   x
 }
+
+
+#' @rdname afsc_roots
+#' @export
+has_prefix <- function(x, allow_X = allow_X) {
+  invalid <- !is_valid_afsc(x, allow_X = allow_X)
+  prefix_ind <- grepl("^[a-zA-Z]", x)
+  prefix_ind[invalid] <- NA
+  prefix_ind
+}
+
+
+#' @rdname afsc_roots
+#' @export
+has_suffix <- function(x, allow_X = allow_X) {
+  invalid <- !is_valid_afsc(x, allow_X = allow_X)
+  suffix_ind <- grepl("[a-zA-Z]$", x)
+  suffix_ind[invalid] <- NA
+  suffix_ind
+}
