@@ -41,7 +41,7 @@ strip_roots <- function(x, allow_X = allow_X) {
 
 #' @rdname afsc_roots
 #' @export
-get_prefix <- function(x) {
+get_prefix <- function(x, allow_X = allow_X) {
   invalid <- !is_valid_afsc(x, allow_X = allow_X)
   prefixes <- grepl("^[a-zA-Z]", x)
   x[prefixes] <- substr(x[prefixes], start = 1, stop = 1)
@@ -53,7 +53,7 @@ get_prefix <- function(x) {
 
 #' @rdname afsc_roots
 #' @export
-get_suffix <- function(x) {
+get_suffix <- function(x, allow_X = allow_X) {
   invalid <- !is_valid_afsc(x, allow_X = allow_X)
   suffixes <- grepl("[a-zA-Z]$", x)
   x[suffixes] <- substr(x[suffixes], start = nchar(x[suffixes]),
