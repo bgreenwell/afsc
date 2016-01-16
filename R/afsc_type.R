@@ -1,3 +1,12 @@
+# Enlisted AFSC patterns
+enlisted_pattern <- "[1-9][A-Z][0-9][013579][0-9]"
+enlisted_X_pattern <- "[1-9][A-Z][0-9][013579?X][0-9]"
+
+# Officer AFSC patterns
+officer_pattern <- "[1-9][0-9][A-Z][0-9]"
+officer_X_pattern <- "[1-9][0-9][A-Z][0-9?X]"
+
+
 #' Officer/Enlisted Air Force Specialty Codes (AFSCs)
 #'
 #' Determine which AFSCs are officer and which are enlisted.

@@ -3,17 +3,25 @@
 \name{strip_roots}
 \alias{get_prefix}
 \alias{get_suffix}
+\alias{has_prefix}
+\alias{has_suffix}
 \alias{strip_roots}
 \title{Air Force Specialty Code (AFSC) Prefixes/Suffixes}
 \usage{
-strip_roots(x)
+strip_roots(x, allow_X = FALSE)
 
-get_prefix(x)
+get_prefix(x, allow_X = FALSE)
 
-get_suffix(x)
+get_suffix(x, allow_X = FALSE)
+
+has_prefix(x, allow_X = FALSE)
+
+has_suffix(x, allow_X = FALSE)
 }
 \arguments{
 \item{x}{A character vector containing AFSCs.}
+
+\item{allow_X}{Logical indicating whether or not the "X" placeholder is allowed. Default is \code{FALSE}.}
 }
 \value{
 \code{strip_roots} returns the original vector of AFSCs with all of

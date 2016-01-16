@@ -15,7 +15,7 @@
 #' strip_roots(afscs)
 #' get_prefix(afscs)
 #' get_suffix(afscs)
-strip_roots <- function(x, allow_X = allow_X) {
+strip_roots <- function(x, allow_X = FALSE) {
 
   # Logical vectors indicating which elements contain a prefix/suffix (if any)
   invalid <- !is_valid_afsc(x, allow_X = allow_X)
@@ -41,7 +41,7 @@ strip_roots <- function(x, allow_X = allow_X) {
 
 #' @rdname afsc_roots
 #' @export
-get_prefix <- function(x, allow_X = allow_X) {
+get_prefix <- function(x, allow_X = FALSE) {
   invalid <- !is_valid_afsc(x, allow_X = allow_X)
   prefixes <- grepl("^[a-zA-Z]", x)
   x[prefixes] <- substr(x[prefixes], start = 1, stop = 1)
@@ -53,7 +53,7 @@ get_prefix <- function(x, allow_X = allow_X) {
 
 #' @rdname afsc_roots
 #' @export
-get_suffix <- function(x, allow_X = allow_X) {
+get_suffix <- function(x, allow_X = FALSE) {
   invalid <- !is_valid_afsc(x, allow_X = allow_X)
   suffixes <- grepl("[a-zA-Z]$", x)
   x[suffixes] <- substr(x[suffixes], start = nchar(x[suffixes]),
@@ -66,7 +66,7 @@ get_suffix <- function(x, allow_X = allow_X) {
 
 #' @rdname afsc_roots
 #' @export
-has_prefix <- function(x, allow_X = allow_X) {
+has_prefix <- function(x, allow_X = FALSE) {
   invalid <- !is_valid_afsc(x, allow_X = allow_X)
   prefix_ind <- grepl("^[a-zA-Z]", x)
   prefix_ind[invalid] <- NA
@@ -76,7 +76,7 @@ has_prefix <- function(x, allow_X = allow_X) {
 
 #' @rdname afsc_roots
 #' @export
-has_suffix <- function(x, allow_X = allow_X) {
+has_suffix <- function(x, allow_X = FALSE) {
   invalid <- !is_valid_afsc(x, allow_X = allow_X)
   suffix_ind <- grepl("[a-zA-Z]$", x)
   suffix_ind[invalid] <- NA
